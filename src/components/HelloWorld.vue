@@ -2,6 +2,8 @@
   div.hello
     h1 {{ msg }}
     h2 Essential Links
+
+    b-alert(show="") Default Alert
 </template>
 
 <script>

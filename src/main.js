@@ -6,6 +6,10 @@ import router from './router'
 
 Vue.config.productionTip = false
 
+import 'bootstrap/dist/css/bootstrap.min.css'
+import BootstrapVue from 'bootstrap-vue'
+Vue.use(BootstrapVue)
+
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
@@ -13,3 +17,4 @@ new Vue({
   components: { App },
   template: '<App/>'
 })
+
