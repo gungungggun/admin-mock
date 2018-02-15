@@ -6,15 +6,11 @@
     b-alert(show="") Default Alert
 </template>
 
-<script>
-export default {
-  name: 'HelloWorld',
-  data () {
-    return {
-      msg: 'Welcome to Your Vue.js App'
-    }
-  }
-}
+<script lang="coffee">
+export default
+  name: 'HelloWorld'
+  data: () ->
+    msg: 'Welcome to Your Vue.js App'
 </script>
 
 <style lang="stylus" scoped>

@@ -4,10 +4,9 @@
     router-view
 </template>
 
-<script>
-export default {
+<script lang="coffee">
+export default
   name: 'App'
-}
 </script>
 
 <style lang="stylus">
