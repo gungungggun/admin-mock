@@ -22,11 +22,17 @@
                       placeholder="Enter email")
 
         b-button(variant="primary" @click="login") ログイン
+
+    global-footer
 </template>
 
 <script lang="coffee">
+import GlobalFooter from '@/components/globals/GlobalFooter'
+
 export default
   name: 'HelloWorld'
+  components:
+    GlobalFooter: GlobalFooter
   data: () ->
     form:
       email: ''
