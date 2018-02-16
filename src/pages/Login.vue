@@ -38,7 +38,7 @@ export default
       email: ''
   methods:
     login: () ->
-      alert(this.form.email)
+      this.$store.dispatch 'login', this.form.email
 </script>
 
 <style lang="stylus" scoped>
