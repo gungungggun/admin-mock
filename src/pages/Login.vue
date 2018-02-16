@@ -39,6 +39,8 @@ export default
   methods:
     login: () ->
       this.$store.dispatch 'login', this.form.email
+      .then (res) =>
+        this.$router.push '/'
 </script>
 
 <style lang="stylus" scoped>

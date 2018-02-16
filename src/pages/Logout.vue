@@ -1,7 +1,6 @@
 <template lang="pug">
   main#page-login
-    h1 トップ
-    b-alert(show="") Default Alert
+    h1 ログアウト
 
     b-container.bv-example-row
       b-row
@@ -11,27 +10,19 @@
         b-col 1 of 3
         b-col 2 of 3
         b-col 3 of 3
-
-    div(@click="logout") ログアウト
-
-    global-footer
 </template>
 
 <script lang="coffee">
-import GlobalFooter from '@/components/globals/GlobalFooter'
-
 export default
-  name: 'Top'
+  name: 'HelloWorld'
   components:
     GlobalFooter: GlobalFooter
   data: () ->
     form:
       email: ''
   methods:
-    logout: () ->
-      this.$store.dispatch 'logout'
-      .then (res) =>
-        this.$router.push '/login'
+    login: () ->
+      this.$store.dispatch 'login', this.form.email
 </script>
 
 <style lang="stylus" scoped>

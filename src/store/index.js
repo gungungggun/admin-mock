@@ -11,12 +11,18 @@ const store = new Vuex.Store({
     login (state, response) {
       // axios.defaults.headers.Authorization = 'Bearer ' + response
       Store.set('jwt', response)
+    },
+    logout (state, response) {
+      Store.remove('jwt')
     }
   },
   actions: {
     async login ({ commit }, param) {
-      let response = 'login'
-      commit('login', response)
+      commit('login', param)
+    },
+    async logout ({ commit }, param) {
+      let response = 'logout'
+      commit('logout', response)
     }
   },
   modules: {
