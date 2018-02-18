@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 import Store from 'store'
+import globals from './globals'
 
 Vue.use(Vuex)
 
@@ -26,6 +27,7 @@ const store = new Vuex.Store({
     }
   },
   modules: {
+    globals: globals
   }
 })
 
