@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
+import Meta from 'vue-meta'
 import Store from 'store'
 import Login from '@/pages/Login'
 import Top from '@/pages/Top'
@@ -11,6 +12,7 @@ if (jwt != null) {
 }
 
 Vue.use(Router)
+Vue.use(Meta)
 
 const router = new Router({
   mode: 'history',

@@ -22,6 +22,8 @@ import GlobalFooter from '@/components/globals/GlobalFooter'
 
 export default
   name: 'Top'
+  metaInfo:
+    title: 'Top'
   components:
     GlobalFooter: GlobalFooter
   data: () ->
