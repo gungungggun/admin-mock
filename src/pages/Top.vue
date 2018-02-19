@@ -14,6 +14,10 @@
 
     div(@click="logout") ログアウト
 
+    nav
+      ul(v-for="page in $store.state.globals.pages")
+        li {{ page.name }}
+
     global-footer
 </template>
 

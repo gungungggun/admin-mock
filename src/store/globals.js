@@ -1,10 +1,21 @@
 const globals = {
   state: {
-    test: ''
+    theme: '',
+    color: '',
+    title: '',
+    pages: [
+      {
+        id: 'user',
+        name: 'ユーザ管理'
+      },
+      {
+        id: 'blog',
+        name: 'ブログ管理'
+      }
+    ]
   },
   mutations: {
     getGlobals (state, response) {
-      state.test = ''
     }
   },
   actions: {
