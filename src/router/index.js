@@ -4,6 +4,7 @@ import Meta from 'vue-meta'
 import Store from 'store'
 import Login from '@/pages/Login'
 import Top from '@/pages/Top'
+import NotFound from '@/pages/NotFound'
 
 const jwt = Store.get('jwt')
 let auth = false
@@ -29,6 +30,11 @@ const router = new Router({
       meta: {
         requiresAuth: true
       }
+    },
+    {
+      path: '*',
+      name: '404',
+      component: NotFound
     }
   ]
 })
