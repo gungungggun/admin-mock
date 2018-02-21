@@ -14,16 +14,14 @@
 
     div(@click="logout") ログアウト
 
-    nav
-      ul(v-for="page in $store.state.globals.pages")
-        li
-          router-link(:to="'/manage/' + page.prefix") {{ page.name }}
+    global-side
 
     global-footer
 </template>
 
 <script lang="coffee">
 import GlobalFooter from '@/components/globals/GlobalFooter'
+import GlobalSide from '@/components/globals/GlobalSide'
 
 export default
   name: 'Top'
@@ -31,6 +29,7 @@ export default
     title: 'Top'
   components:
     GlobalFooter: GlobalFooter
+    GlobalSide: GlobalSide
   data: () ->
     form:
       email: ''
