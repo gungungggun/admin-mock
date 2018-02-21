@@ -4,6 +4,7 @@ import Meta from 'vue-meta'
 import Store from 'store'
 import Login from '@/pages/Login'
 import Top from '@/pages/Top'
+import Manage from '@/pages/Manage'
 import NotFound from '@/pages/NotFound'
 
 const jwt = Store.get('jwt')
@@ -27,6 +28,14 @@ const router = new Router({
       path: '/',
       name: 'Top',
       component: Top,
+      meta: {
+        requiresAuth: true
+      }
+    },
+    {
+      path: '/manage/:prefix',
+      name: 'Manage',
+      component: Manage,
       meta: {
         requiresAuth: true
       }
