@@ -16,7 +16,8 @@
 
     nav
       ul(v-for="page in $store.state.globals.pages")
-        li {{ page.name }}
+        li
+          router-link(:to="'/manage/' + page.prefix") {{ page.name }}
 
     global-footer
 </template>

@@ -1,16 +1,11 @@
 <template lang="pug">
   main#page-login
-    h1 管理
+    h1 {{ page.name }}
     b-alert(show="") Default Alert
 
     b-container.bv-example-row
       b-row
-        b-col 1 of 2
-        b-col 2 of 2
-      b-row
-        b-col 1 of 3
-        b-col 2 of 3
-        b-col 3 of 3
+        b-table(:items="items" striped hover)
 
     global-footer
 </template>
@@ -25,8 +20,19 @@ export default
   components:
     GlobalFooter: GlobalFooter
   data: () ->
-    form:
-      email: ''
+    items: [
+      {
+        name: 'A san'
+        age: 10
+      },
+      {
+        name: 'B san'
+        age: 12
+      }
+    ]
+  computed:
+    page: () ->
+      return this.$store.state.globals.pages.filter((e) => e.prefix == this.$route.params.prefix)[0]
   methods:
     logout: () ->
       this.$store.dispatch 'logout'

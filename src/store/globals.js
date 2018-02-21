@@ -5,11 +5,11 @@ const globals = {
     title: '',
     pages: [
       {
-        id: 'user',
+        prefix: 'user',
         name: 'ユーザ管理'
       },
       {
-        id: 'blog',
+        prefix: 'blog',
         name: 'ブログ管理'
       }
     ]
