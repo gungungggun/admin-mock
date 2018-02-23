@@ -1,15 +1,17 @@
 <template lang="pug">
-  main(:id="prefix")
-    h1 {{ title }}
-    b-alert(show="") Default Alert
+  div#all
+    main(:id="prefix")
+      h1 {{ title }}
+      b-alert(show="") Default Alert
 
-    slot
+      slot
 
-    div(@click="logout") ログアウト
+      div(@click="logout") ログアウト
 
-    global-side
+      global-footer
 
-    global-footer
+    global-side#global-side
+
 </template>
 
 <script lang="coffee">
@@ -30,7 +32,14 @@ export default
 </script>
 
 <style lang="stylus" scoped>
-h1, h2
-  font-weight normal
-  color #42b983
+#all
+  display flex
+  flex-direction row-reverse
+  width 100vw
+main
+  width 80%
+#global-side
+  width 20%
+  height 100vh
+  background #025
 </style>
