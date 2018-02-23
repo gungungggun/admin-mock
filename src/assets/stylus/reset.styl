@@ -1,0 +1,36 @@
+html
+  box-sizing border-box
+  overflow-y scroll /* All browsers without overlaying scrollbars */
+  -webkit-text-size-adjust 100% /* iOS 8+ */
+
+body
+  width 100vw
+  overflow hidden
+  -webkit-text-size-adjust 100%
+
+*
+  -webkit-user-select none
+  -webkit-touch-callout none
+  -webkit-tap-highlight-color rgba(0, 0, 0, 0) !important
+
+*,
+::before,
+::after
+  background-repeat no-repeat /* Set `background-repeat: no-repeat` to all elements and pseudo elements */
+  box-sizing inherit
+
+::before,
+::after
+  text-decoration inherit /* Inherit text-decoration and vertical align to ::before and ::after pseudo elements */
+  vertical-align inherit
+
+*::-webkit-scrollbar
+  display none
+
+input, textarea
+  -webkit-user-select auto
+
+ul
+  list-style-type none
+  margin 0
+  padding 0
