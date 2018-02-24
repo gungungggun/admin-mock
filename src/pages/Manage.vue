@@ -7,6 +7,12 @@
       b-row
         b-table(:items="items" striped hover)
 
+        b-form-file(v-model="file" accept="image/*")
+
+        b-button(@click="showFile")
+
+        p {{ file2 }}
+
     global-footer
 </template>
 
@@ -20,6 +26,8 @@ export default
   components:
     GlobalFooter: GlobalFooter
   data: () ->
+    file: null
+    file2: null
     items: [
       {
         name: 'A san'
@@ -34,10 +42,11 @@ export default
     page: () ->
       return this.$store.state.globals.pages.filter((e) => e.prefix == this.$route.params.prefix)[0]
   methods:
-    logout: () ->
-      this.$store.dispatch 'logout'
-      .then (res) =>
-        this.$router.push '/login'
+    showFile: () ->
+      reader = new FileReader()
+      reader.onload = (e) =>
+        this.file2 = e.target.result
+      reader.readAsDataURL(this.file)
 </script>
 
 <style lang="stylus" scoped>
