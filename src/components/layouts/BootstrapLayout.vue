@@ -1,16 +1,19 @@
 <template lang="pug">
   div#all
     main(:id="prefix")
-      h1 {{ title }}
-      b-alert(show="") Default Alert
-
-      slot
+      div.wrap
+        div.title
+          h1 {{ title }}
+        div.alert
+          b-alert Default Alert
+        div.inner
+          slot
 
       div(@click="logout") ログアウト
 
       global-footer
 
-    global-side#global-side
+    global-side
 
 </template>
 
@@ -29,6 +32,11 @@ export default
     title:
       default: ''
       type: String
+  methods:
+    logout: () ->
+      this.$store.dispatch 'logout'
+      .then (res) =>
+        this.$router.push '/login'
 </script>
 
 <style lang="stylus" scoped>
@@ -36,10 +44,12 @@ export default
   display flex
   flex-direction row-reverse
   width 100vw
-main
-  width 80%
-#global-side
-  width 20%
-  height 100vh
-  background #025
+  main
+    width 100%
+    .wrap
+      .title
+        width 100%
+        padding 10px
+      .inner
+        width 100%
 </style>
