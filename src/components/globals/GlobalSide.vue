@@ -4,6 +4,7 @@
       img(src="./../../assets/logo.png")
     div.toggle
       div.button(@click="toggleMenu")
+        icon(name="flag")
     ul(v-for="page in $store.state.globals.pages")
       li
         router-link(:to="'/manage/' + page.prefix") {{ page.name }}
