@@ -4,7 +4,7 @@
       img(src="./../../assets/logo.png")
     div.toggle
       div.button(@click="toggleMenu")
-        icon(name="flag")
+        icon(name="arrow-right")
     ul(v-for="page in $store.state.globals.pages")
       li
         router-link(:to="'/manage/' + page.prefix") {{ page.name }}
@@ -39,12 +39,14 @@ export default
       width 50px
       height 50px
       background #015
+      color #fff
   ul
     li
       a
         display block
         width 100%
         color #fff
+        padding 10px
         &:hover
           background #015
           text-decoration none
