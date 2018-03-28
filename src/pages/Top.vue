@@ -8,6 +8,7 @@
         b-col 1 of 3
         b-col 2 of 3
         b-col 3 of 3
+    p {{ $store.state.test.test }}
 
 </template>
 

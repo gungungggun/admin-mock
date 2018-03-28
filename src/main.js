@@ -8,6 +8,10 @@ import './plugins'
 
 Vue.config.productionTip = false
 
+Vue.config.errorHandler = (err, vm, info) => {
+  vm.$router.push('error')
+}
+
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
